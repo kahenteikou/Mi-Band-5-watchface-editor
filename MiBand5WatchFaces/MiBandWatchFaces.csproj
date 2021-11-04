@@ -1,17 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EFE5FD9A-4407-46D7-BB79-F7080668B5E8}</ProjectGuid>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MiBand5WatchFaces</RootNamespace>
-    <AssemblyName>MiBandWatchFaces</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -29,31 +20,11 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
@@ -63,611 +34,38 @@
   <PropertyGroup>
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <ManifestCertificateThumbprint>42B42B9C90F0AF10D8E830C6497254B18153E36A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>MiBand5WatchFaces_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <ApplicationIcon>proj_%281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\CircleScaleForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CircleScaleForm.Designer.cs">
-      <DependentUpon>CircleScaleForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AboutBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AboutBox.Designer.cs">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ActivityForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ActivityForm.Designer.cs">
-      <DependentUpon>ActivityForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AlarmForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AlarmForm.Designer.cs">
-      <DependentUpon>AlarmForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AnalogDialFaceForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AnalogDialFaceForm.Designer.cs">
-      <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AnimationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AnimationForm.Designer.cs">
-      <DependentUpon>AnimationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ArrowPaintForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ArrowPaintForm.Designer.cs">
-      <DependentUpon>ArrowPaintForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\BackgroundForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\BackgroundForm.Designer.cs">
-      <DependentUpon>BackgroundForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\BatteryForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\BatteryForm.Designer.cs">
-      <DependentUpon>BatteryForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DateForm.Designer.cs">
-      <DependentUpon>DateForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ImageBasicForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ImageBasicForm.Designer.cs">
-      <DependentUpon>ImageBasicForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ImageSetForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ImageSetForm.Designer.cs">
-      <DependentUpon>ImageSetForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\InputForm1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InputForm.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\JSONEditorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\JSONEditorForm.Designer.cs">
-      <DependentUpon>JSONEditorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ScaleForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ScaleForm.Designer.cs">
-      <DependentUpon>ScaleForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SettingsForm.Designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StatusForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StatusForm.Designer.cs">
-      <DependentUpon>StatusForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\HeartProgressForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HeartProgressForm.Designer.cs">
-      <DependentUpon>HeartProgressForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StepsProgressForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StepsProgressForm.Designer.cs">
-      <DependentUpon>StepsProgressForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TimeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TimeForm.Designer.cs">
-      <DependentUpon>TimeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ImagesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ImagesForm.Designer.cs">
-      <DependentUpon>ImagesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UpdateForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UpdateForm.Designer.cs">
-      <DependentUpon>UpdateForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\WeatherForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WeatherForm.Designer.cs">
-      <DependentUpon>WeatherForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\WeekDaysIconsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WeekDaysIconsForm.Designer.cs">
-      <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImageWorker.cs" />
-    <Compile Include="Forms\InputForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\InputForm.Designer.cs">
-      <DependentUpon>InputForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\NumberFormEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NumberFormEdit.Designer.cs">
-      <DependentUpon>NumberFormEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Resource1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SupportAuthorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SupportAuthorForm.Designer.cs">
-      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VisualRender.cs" />
-    <Compile Include="WatchFaceLibrary.cs" />
-    <Compile Include="Forms\WatchfaceState.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WatchfaceState.Designer.cs">
-      <DependentUpon>WatchfaceState.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Forms\ActivityForm.zh-CN.resx">
-      <DependentUpon>ActivityForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AlarmForm.zh-CN.resx">
-      <DependentUpon>AlarmForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AnalogDialFaceForm.zh-CN.resx">
-      <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AnimationForm.zh-CN.resx">
-      <DependentUpon>AnimationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ArrowPaintForm.zh-CN.resx">
-      <DependentUpon>ArrowPaintForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BackgroundForm.zh-CN.resx">
-      <DependentUpon>BackgroundForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BatteryForm.zh-CN.resx">
-      <DependentUpon>BatteryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CircleScaleForm.en.resx">
-      <DependentUpon>CircleScaleForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CircleScaleForm.resx">
-      <DependentUpon>CircleScaleForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CircleScaleForm.ru.resx">
-      <DependentUpon>CircleScaleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AboutBox.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ActivityForm.en.resx">
-      <DependentUpon>ActivityForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ActivityForm.resx">
-      <DependentUpon>ActivityForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ActivityForm.ru.resx">
-      <DependentUpon>ActivityForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AlarmForm.en.resx">
-      <DependentUpon>AlarmForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AlarmForm.resx">
-      <DependentUpon>AlarmForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AlarmForm.ru.resx">
-      <DependentUpon>AlarmForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AnalogDialFaceForm.en.resx">
-      <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AnalogDialFaceForm.resx">
-      <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AnalogDialFaceForm.ru.resx">
-      <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AnimationForm.en.resx">
-      <DependentUpon>AnimationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AnimationForm.resx">
-      <DependentUpon>AnimationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AnimationForm.ru.resx">
-      <DependentUpon>AnimationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ArrowPaintForm.en.resx">
-      <DependentUpon>ArrowPaintForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ArrowPaintForm.resx">
-      <DependentUpon>ArrowPaintForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ArrowPaintForm.ru.resx">
-      <DependentUpon>ArrowPaintForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BackgroundForm.en.resx">
-      <DependentUpon>BackgroundForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BackgroundForm.resx">
-      <DependentUpon>BackgroundForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BackgroundForm.ru.resx">
-      <DependentUpon>BackgroundForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BatteryForm.en.resx">
-      <DependentUpon>BatteryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BatteryForm.resx">
-      <DependentUpon>BatteryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BatteryForm.ru.resx">
-      <DependentUpon>BatteryForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CircleScaleForm.zh-CN.resx">
-      <DependentUpon>CircleScaleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DateForm.en.resx">
-      <DependentUpon>DateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DateForm.resx">
-      <DependentUpon>DateForm.cs</DependentUpon>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>DateForm1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DateForm.ru.resx">
-      <DependentUpon>DateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DateForm.zh-CN.resx">
-      <DependentUpon>DateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeartProgressForm.en.resx">
-      <DependentUpon>HeartProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeartProgressForm.ru.resx">
-      <DependentUpon>HeartProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeartProgressForm.zh-CN.resx">
-      <DependentUpon>HeartProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageBasicForm.en.resx">
-      <DependentUpon>ImageBasicForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageBasicForm.resx">
-      <DependentUpon>ImageBasicForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageBasicForm.ru.resx">
-      <DependentUpon>ImageBasicForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageBasicForm.zh-CN.resx">
-      <DependentUpon>ImageBasicForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageSetForm.en.resx">
-      <DependentUpon>ImageSetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageSetForm.resx">
-      <DependentUpon>ImageSetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageSetForm.ru.resx">
-      <DependentUpon>ImageSetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImageSetForm.zh-CN.resx">
-      <DependentUpon>ImageSetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImagesForm.en.resx">
-      <DependentUpon>ImagesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImagesForm.ru.resx">
-      <DependentUpon>ImagesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImagesForm.zh-CN.resx">
-      <DependentUpon>ImagesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InputForm.zh-CN.resx">
-      <DependentUpon>InputForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\JSONEditorForm.en.resx">
-      <DependentUpon>JSONEditorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\JSONEditorForm.resx">
-      <DependentUpon>JSONEditorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\JSONEditorForm.ru.resx">
-      <DependentUpon>JSONEditorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\JSONEditorForm.zh-CN.resx">
-      <DependentUpon>JSONEditorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NumberFormEdit.en.resx">
-      <DependentUpon>NumberFormEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NumberFormEdit.ru.resx">
-      <DependentUpon>NumberFormEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NumberFormEdit.zh-CN.resx">
-      <DependentUpon>NumberFormEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScaleForm.en.resx">
-      <DependentUpon>ScaleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScaleForm.resx">
-      <DependentUpon>ScaleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScaleForm.ru.resx">
-      <DependentUpon>ScaleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ScaleForm.zh-CN.resx">
-      <DependentUpon>ScaleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsForm.en.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsForm.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SettingsForm1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsForm.ru.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsForm.zh-CN.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StatusForm.en.resx">
-      <DependentUpon>StatusForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StatusForm.resx">
-      <DependentUpon>StatusForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeartProgressForm.resx">
-      <DependentUpon>HeartProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StatusForm.ru.resx">
-      <DependentUpon>StatusForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StatusForm.zh-CN.resx">
-      <DependentUpon>StatusForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StepsProgressForm.en.resx">
-      <DependentUpon>StepsProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StepsProgressForm.resx">
-      <DependentUpon>StepsProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StepsProgressForm.ru.resx">
-      <DependentUpon>StepsProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StepsProgressForm.zh-CN.resx">
-      <DependentUpon>StepsProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TimeForm.en.resx">
-      <DependentUpon>TimeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TimeForm.resx">
-      <DependentUpon>TimeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImagesForm.resx">
-      <DependentUpon>ImagesForm.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ImagesForm1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TimeForm.ru.resx">
-      <DependentUpon>TimeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TimeForm.zh-CN.resx">
-      <DependentUpon>TimeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateForm.resx">
-      <DependentUpon>UpdateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateForm.ru.resx">
-      <DependentUpon>UpdateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UpdateForm.zh-CN.resx">
-      <DependentUpon>UpdateForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WatchfaceState.en.resx">
-      <DependentUpon>WatchfaceState.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WatchfaceState.ru.resx">
-      <DependentUpon>WatchfaceState.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WatchfaceState.zh-CN.resx">
-      <DependentUpon>WatchfaceState.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WeatherForm.en.resx">
-      <DependentUpon>WeatherForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WeatherForm.resx">
-      <DependentUpon>WeatherForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WeatherForm.ru.resx">
-      <DependentUpon>WeatherForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WeatherForm.zh-CN.resx">
-      <DependentUpon>WeatherForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WeekDaysIconsForm.en.resx">
-      <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WeekDaysIconsForm.resx">
-      <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WeekDaysIconsForm.ru.resx">
-      <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InputForm.en.resx">
-      <DependentUpon>InputForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InputForm.resx">
-      <DependentUpon>InputForm.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>InputForm1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InputForm.ru.resx">
-      <DependentUpon>InputForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WeekDaysIconsForm.zh-CN.resx">
-      <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.en.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>MainForm1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NumberFormEdit.resx">
-      <DependentUpon>NumberFormEdit.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>NumberFormEdit1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.ru.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.zh-CN.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.en.resx" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Forms\WatchfaceState.resx">
-      <DependentUpon>WatchfaceState.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ru.resx" />
-    <EmbeddedResource Include="Resources\Resource1.en.resx" />
-    <EmbeddedResource Include="Resources\Resource1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Resource1.ru.resx" />
-    <EmbeddedResource Include="Resources\Resource1.zh-CN.resx" />
-    <EmbeddedResource Include="SupportAuthorForm.en.resx">
-      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SupportAuthorForm.resx">
-      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SupportAuthorForm.ru.resx">
-      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SupportAuthorForm.zh-CN.resx">
-      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Properties\app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <None Include="WatchFace6\WatchFace.exe.config">
+    <None Update="WatchFace6\WatchFace.exe.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="WatchFace\PreviewStatesV2.1.8a.json">
+    <None Update="WatchFace\PreviewStatesV2.1.8a.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="WatchFace\WatchFace.exe.config">
+    <None Update="WatchFace\WatchFace.exe.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BackImage.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -684,8 +82,6 @@
   <ItemGroup>
     <Content Include="proj %281%29 %281%29.ico" />
     <Content Include="proj-_1_.ico" />
-    <None Include="Resources\21305435.png" />
-    <None Include="Resources\pngtree-black-coin-icon-image_1130356.png" />
     <Content Include="proj_%281%29.ico" />
     <Content Include="WatchFace6\lib\BumpKit.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -737,6 +133,10 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Remove="WatchFaceClass.cs" />
+  </ItemGroup>
 </Project>
